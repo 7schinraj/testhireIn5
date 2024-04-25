@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+<head>
+    <title>Invoice</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600" rel="stylesheet" type="text/css"></link>
+    <link rel="icon" href="https://razorpay.com/favicon.png" type="image/x-icon" />
+
+                    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: "Lato",ubuntu,helvetica,sans-serif;
+            color: #414141;
+            background: #fff;
+        }
+
+
+        #success path {
+            fill: #6DCA00;
+        }
+
+        #failure path {
+            fill: #e74c3c;
+        }
+
+        h3 {
+            font-weight: normal;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 30px auto;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        #break {
+            color: #777;
+            font-size: 14px;
+            margin: 30px -30px 0;
+            padding: 30px 30px 0;
+            border-top: 1px dashed #e3e4e6;
+            text-align: left;
+            line-height: 24px;
+        }
+
+        #break span {
+            float: right;
+        }
+
+        #success {
+            display: none;
+        }
+
+        .paid #success {
+            display: block;
+        }
+
+        .issued #partial {
+            display: none;
+        }
+
+        #button {
+            background-color: #4994E6;
+            color: #fff;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            font: inherit;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 2px;
+        }
+
+        #button:active {
+            box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset, 0 0 6px rgba(0,0,0,.2) inset;
+        }
+
+        body div.redirect-message {
+
+            display: none;
+        }
+
+        body.has-redirect div.redirect-message {
+
+            display: block;
+        }
+    </style>
+
+    <script src="https://cdn.razorpay.com/static/analytics/bundle.js"></script>
+</head>
+<body>
+
+<script>
+
+    (function (globalScope) {
+
+        var keylessHeader = "api_v1:ziZBUO16QXkm+qr62/CcnSa1DGp/Rbzu1vGmFvq3LF861DoXIO3t2trYw7sECupAM5nmLZlaTQ/0X1bCvpiSeGuxa4wW7g==";
+
+        var data = {"environment":"production","is_test_mode":true,"invoicejs_url":"https:\/\/cdn.razorpay.com\/v1\/invoice.js","key_id":"rzp_test_nGfn5kLX9FpeZ3","merchant":{"name":"TURNAROUND TREE GLOBAL SOLUTIONS PVT LTD","billing_label":"TURNAROUND TREE GLOBAL SOLUTIONS PVT LTD","image":"https:\/\/cdn.razorpay.com\/logos\/Nw4UVyiIZhtUTS_large.png","brand_logo":"https:\/\/cdn.razorpay.com\/logos\/Nw4UVyiIZhtUTS_large.png","brand_color":"rgb(29,55,231)","contrast_color":"#FFFFFF","brand_text_color":"#ffffff","pan":"","cin":"U62090TS2024PTC183372","gstin":null,"has_cin_or_gstin":true,"business_registered_address_text":"102, Indira dream valley, 8-2-326\/4\/1, Road no 3, Banjara Hills, Hyderabad, Telangana, India - 500034","support_email":"","support_mobile":""},"invoice":{"id":"inv_O01C6idUZx5jgO","entity":"invoice","receipt":null,"invoice_number":null,"customer_id":"cust_NzDgzhryprIKv8","customer_details":{"id":"cust_NzDgzhryprIKv8","name":"","email":"","contact":"","gstin":null,"billing_address":null,"shipping_address":null,"customer_name":"","customer_email":"","customer_contact":"","billing_address_text":null,"shipping_address_text":null,"is_contact_or_email_present":true},"order_id":"order_O01C6mdZ2lKe3C","line_items":[{"id":"li_O01C6kvLyC5IUI","item_id":null,"ref_id":null,"ref_type":null,"name":"Payment","description":"Payment for goods\/services","amount":899,"unit_amount":899,"gross_amount":899,"tax_amount":0,"taxable_amount":899,"net_amount":899,"currency":"INR","type":"invoice","tax_inclusive":false,"hsn_code":null,"sac_code":null,"tax_rate":null,"unit":null,"quantity":1,"taxes":[],"amount_formatted":"8.99","total_amount_formatted":"8.99","has_taxes":false}],"payment_id":null,"status":"issued","expire_by":null,"issued_at":1713428686,"paid_at":null,"cancelled_at":null,"expired_at":null,"date":1713428686,"terms":null,"partial_payment":false,"gross_amount":899,"tax_amount":0,"taxable_amount":899,"amount":899,"amount_paid":0,"amount_due":899,"first_payment_min_amount":null,"currency":"INR","currency_symbol":"₹","description":"Invoice for payment","comment":null,"short_url":"https:\/\/rzp.io\/i\/2NlLx8i","type":"invoice","group_taxes_discounts":false,"supply_state_code":null,"created_at":1713428686,"ref_num":null,"is_paid":false,"payments":[],"callback_url":null,"callback_method":null,"merchant_gstin":null,"customer_gstin":null,"merchant_label":"TURNAROUND TREE GLOBAL SOLUTIONS PVT LTD","supply_state_name":null,"has_address_or_pos":false,"signed_pdf_url":"https:\/\/rzp-1415-prod-api-invoices.s3.ap-south-1.amazonaws.com\/o01c6iduzx5jgo_1713428687?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=FwoGZXIvYXdzEMT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDML7adlwhX03rrfCCCKtAYsotcbiOr25HtKU%2Fg2L0yjQzwKd81%2FW%2FvT9%2BM%2BrHK6HK6uOA82trE8fd11uoBohU5MydtZ8Z4rKJViXA2WA1KbdUgJP0vvNnQNr4VQ1%2Bble9QVJGSfIDP9fVB0j6BUiY1ESjldt15X8AepuNdxemWucWDt8LrqPA1CY5uQMx7759Y2c%2FHcjW%2FAcOs5heoJkf6TZqwQ4F%2BhvYGn1CwEPKMvkbdXzHzYtK7NpiJzJKLHzg7EGMi3htS7hyUfo7bfsoC7gj2vq7NRz12Aeqr49ILUjkMqdGA%2F7N%2FiEOT0A6ktdr5Y%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIASB54T2ANLSRH4UN7%2F20240418%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20240418T104524Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Signature=431860b3a0b756cb9a1093d342b40dc4e850fa8f0e3d7012567045a34533d1f5","amount_formatted":"8.99","amount_due_formatted":"8.99","amount_paid_formatted":"0.00","tax_amount_formatted":"0.00","gross_amount_formatted":"8.99","issued_at_formatted":"18 Apr 2024","date_formatted":"18 Apr 2024","expire_by_formatted":null,"expired_at_formatted":null,"entity_type":null},"options":{"checkout":{"name":"","description":"","first_payment_min_amount":"Minimum Amount Due","prefill":{"select_partial":"0","select_full":"0","card":[]},"method":{"card":"1","netbanking":"1","wallet":"1","upi":"1","emi":"1","upi_intent":"0","qr":"1","bank_transfer":"1"},"features":{"cardsaving":"1"},"readonly":{"contact":"0","email":"0","name":"0"},"hidden":{"contact":"0","email":"0"},"theme":{"hide_topbar":"0","image_padding":"1","image_frame":"1","close_button":"0","close_method_back":"0","debit_card":"0"},"modal":{"confirm_close":"0","escape":"1","animation":"1","backdropclose":"0","handleback":"1","select_partial":"0"},"partial_payment":{"min_amount_label":"Minimum first amount","partial_amount_label":"Make payment in parts","partial_amount_description":"Pay some now and the remaining later","full_amount_label":"Pay in full"},"config":[]},"order":{"bank_account":[]},"hosted_page":{"footer":{"razorpay_branding":"1","security_branding":"1"},"label":{"receipt":"RECEIPT","description":"PAYMENT FOR","amount_payable":"AMOUNT PAYABLE","amount_paid":"AMOUNT PAID","partial_amount_due":"DUE","partial_amount_paid":"PAID","expire_by":"EXPIRE BY","expired_on":"EXPIRED ON"},"show_preferences":{"issued_to":"1"},"enable_embedded_checkout":"0"}},"view_preferences":{"hide_issued_to":false,"exempt_customer_flagging":false},"org":{"branding":{"business_name":"Razorpay","security_branding_logo":"https:\/\/cdn.razorpay.com\/static\/assets\/pay_methods_branding.png","show_rzp_logo":true,"branding_logo":"https:\/\/cdn.razorpay.com\/logo.svg","show_otp_msg":true,"product_domain_name":"razorpay.com\/invoices","product_domain_link":"https:\/\/razorpay.com\/invoices\/"}},"request_params":[],"lumberjack_key":"96df432a283745908a06f711acd9e5eb"};
+
+        function forEach (dict, cb) {
+
+            dict = dict || {};
+
+            if (typeof dict !== "object" || typeof cb !== "function") {
+
+                return dict;
+            }
+
+            var key, value;
+
+            for (key in dict) {
+
+                if (!dict.hasOwnProperty(key)) {
+
+                    continue;
+                }
+
+                value = dict[key];
+                cb.apply(value, [value, key, dict]);
+            }
+
+            return dict;
+        }
+
+        function parseQuery(qstr) {
+
+            var query = {};
+
+            var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&'), i, b;
+
+            for (i = 0; i < a.length; i++) {
+
+                b = a[i].split('=');
+                query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
+            }
+
+            return query;
+        }
+
+        function createHiddenInput (key, value) {
+
+            var input = document.createElement("input");
+
+            input.type  = "hidden";
+            input.name  = key;
+            input.value = value;
+
+            return input;
+        }
+
+        function hasRedirect () {
+
+            return data.invoice &&
+                data.invoice.callback_url &&
+                data.invoice.callback_method;
+        }
+
+        function redirectToCallback (callbackUrl,
+                                     callbackMethod,
+                                     requestParams) {
+
+            document.body.className = ([document.body.className,
+                "paid",
+                "has-redirect"]).join(" ");
+
+            var form   = document.createElement("form"),
+                method = callbackMethod.toUpperCase(),
+                input, key;
+
+            form.method = method;
+            form.action = callbackUrl;
+
+            forEach(requestParams, function (value, key) {
+
+                form.appendChild(createHiddenInput(key, value));
+            });
+
+            var urlParamRegex = /^[^#]+\?([^#]+)/,
+                matches       = callbackUrl.match(urlParamRegex),
+                queryParams;
+
+            if (method === "GET" && matches) {
+
+                queryParams = matches[1];
+
+                if (queryParams.length > 0) {
+
+                    queryParams = parseQuery(queryParams);
+
+                    forEach(queryParams, function (value, key) {
+
+                        form.appendChild(createHiddenInput(key, value));
+                    });
+                }
+            }
+
+            document.body.appendChild(form);
+
+            form.submit();
+        }
+
+        data.keyless_header            = keylessHeader;
+        globalScope.data               = data;
+        globalScope.hasRedirect        = hasRedirect;
+        globalScope.redirectToCallback = redirectToCallback;
+    }(window.RZP_DATA = window.RZP_DATA || {}));
+</script>
+
+<div id="invoice-status-container" class=issued>
+    <script src="https://cdn.razorpay.com/v1/invoice.js"></script>
+    <div id="invoice-container"></div>
+    <script type="text/javascript">
+        (function (globalScope) {
+
+            var data = globalScope.data;
+
+            RazorpayInvoice({
+                parentElement: "#invoice-container",
+                data: data,
+                paymentResponseHandler: function(response) {
+
+                    if (globalScope.hasRedirect()) {
+
+                        return globalScope.redirectToCallback(
+                            data.invoice.callback_url,
+                            data.invoice.callback_method,
+                            response
+                        );
+                    }
+
+                    if (response.razorpay_invoice_status === 'paid') {
+                        let invoice = data.invoice;
+                        invoice.amount_due_formatted = '0.00';
+                        invoice.amount_paid_formatted = invoice.amount_formatted;
+                        invoice.status = 'paid';
+                        invoice.is_paid = true;
+                        this.rerender(data);
+                    } else {
+                        window.location.reload()
+                    }
+                }
+            });
+        }(window.RZP_DATA = window.RZP_DATA || {}));
+    </script>
+</div>
+
+<script>
+
+    (function (globalScope) {
+
+        var data = globalScope.data;
+
+        if (globalScope.hasRedirect() &&
+            data.request_params.razorpay_payment_id) {
+
+            return globalScope.redirectToCallback(
+                data.invoice.callback_url,
+                data.invoice.callback_method,
+                data.request_params
+            );
+        }
+    }(window.RZP_DATA = window.RZP_DATA || {}));
+</script>
+</body>
+</html>
