@@ -185,7 +185,7 @@ class StaffUser(AbstractUser):
     current_place_of_residence = models.CharField(max_length=200, blank=True, default="")
     date_of_birth=models.CharField(max_length=20, blank=True, default="")
     video_resume=models.CharField(max_length=255, default='',blank=True)
-    gender=models.CharField(max_length=10, default='',blank=True)
+    # gender=models.CharField(max_length=10, default='',blank=True)
     profile_picture=models.CharField(max_length=255, default='',blank=True)
     lived_at_current_residence = models.CharField(max_length=200, blank=True, default="")
     company = models.ForeignKey(CompanyInfo, on_delete=models.CASCADE, null=True, blank=True, related_name='staff_users')
@@ -225,3 +225,4 @@ class StaffUser(AbstractUser):
     mrs = models.CharField(max_length=5, blank=True, null=True, default="")
     contact_preference_info = models.ForeignKey(ContactPreferenceInfo, on_delete=models.CASCADE, null=True, blank=True)
     requirements_info = models.ForeignKey(RequirementsInfo, on_delete=models.CASCADE, null=True, blank=True)
+    test_field_status = models.CharField(max_length=5, blank=True, null=True, default="")
