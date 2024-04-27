@@ -143,12 +143,12 @@ class StaffUserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = StaffUser
-        fields = ('id', 'first_name', 'email', 'gender', 'username', 'password', 'phone','otp', 'title', 'linked_in', 'nottify',
+        fields = ('id', 'first_name', 'email', 'username', 'password', 'phone','otp', 'title', 'linked_in', 'nottify',
                    'role', 'date_of_birth', 'current_place_of_residence','lived_at_current_residence','email_verification', 'mobile_verification',
                    'onboarding_status', 'profile_picture', 'part_time_availability', 'bio',"status", "apprual", 'employee_id', 'dissabled', 'hired_status','background_verification', 'personality_assessment',
                    'address','kyc_info', 'passport_info', 'preference_info','travel_info', 'company', 
                    'recently_visited',"pricing_info", "professional_details_info", 'project_details_info', 'certificate_info', 'hire_info',
-                    'education_info', 'video_resume','work_preference_info','rate_card_info','contracts_info', 'team_members_info', 'interview_info', 'contact_preference_info', 'requirements_info')
+                    'education_info', 'video_resume','work_preference_info','rate_card_info','contracts_info', 'team_members_info', 'interview_info', 'contact_preference_info', 'requirements_info', 'test_field_status')
         
         extra_kwargs = {'password': {'write_only': True, 'required': False},}
 
@@ -280,7 +280,7 @@ class StaffUserSerializer(serializers.ModelSerializer):
         instance.email = validated_data.get('email', instance.email)
         instance.username = validated_data.get('username', instance.username)
         instance.phone = validated_data.get('phone', instance.phone)
-        instance.title = validated_data.get('title', instance.title)
+        # instance.title = validated_data.get('title', instance.title)
         instance.linked_in = validated_data.get('linked_in', instance.linked_in)
         instance.role = validated_data.get('role', instance.role)
         instance.email_verification=validated_data.get('email_verification', instance.email_verification)
@@ -291,7 +291,7 @@ class StaffUserSerializer(serializers.ModelSerializer):
         instance.date_of_birth=validated_data.get('date_of_birth', instance.date_of_birth)
         instance.part_time_availability=validated_data.get('part_time_availability', instance.part_time_availability)
         instance.bio=validated_data.get('bio', instance.bio)
-        instance.gender=validated_data.get('gender', instance.gender)
+        # instance.gender=validated_data.get('gender', instance.gender)
         instance.onboarding_status=validated_data.get('onboarding_status', instance.onboarding_status)
         instance.profile_picture=validated_data.get('profile_picture', instance.profile_picture)
         instance.status=validated_data.get('status', instance.status)
@@ -306,6 +306,7 @@ class StaffUserSerializer(serializers.ModelSerializer):
         instance.fresher=validated_data.get('fresher', instance.fresher)
         instance.mr=validated_data.get('mr', instance.mr)
         instance.mrs=validated_data.get('mrs', instance.mrs)
+        instance.test_field_status=validated_data.get('test_field_status', instance.test_field_status)
 
 
         hire_data = validated_data.get('hire_info', None)
